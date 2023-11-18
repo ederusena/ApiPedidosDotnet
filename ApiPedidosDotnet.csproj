@@ -10,4 +10,12 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <EditorConfigFiles Remove="C:\Users\eders\OneDrive\Documentos\Visual Studio\ApiPedidosDotnet\.editorconfig" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="C:\Users\eders\OneDrive\Documentos\Visual Studio\ApiPedidosDotnet\.editorconfig" />
+  </ItemGroup>
+
 </Project>
