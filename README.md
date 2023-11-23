@@ -10,6 +10,10 @@ Domain
 ├── Products
 │   ├── Product.cs
 │   └── Category.cs
+│ 
+Infra
+├── Data
+│   └── DBContext.cs
 ```
 
 ## Criando Class Product
@@ -63,4 +67,27 @@ public abstract class BaseEntity
     public DateTime EditedAt { get; set; }
 }
 ```
+
+## Criando o Contexto DBContext
+
+```csharp
+using ApiPedidosDotnet.Domain.Products;
+using Microsoft.EntityFrameworkCore;
+using System;
+
+namespace ApiPedidosDotnet.Infra.Data;
+
+public class ApplicationDBContext : DbContext
+{
+    public DbSet<Product> Products { get; set; }
+    public DbSet<Category> Categories { get; set; }
+    public ApplicationDBContext(DbContextOptions<ApplicationDBContext> options) : base(options) { }
+
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+    }
+}
+```
+
+
 
