@@ -24,4 +24,8 @@
     <None Include="C:\Users\eders\OneDrive\Documentos\Visual Studio\ApiPedidosDotnet\.editorconfig" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Endpoints\Categories\" />
+  </ItemGroup>
+
 </Project>
