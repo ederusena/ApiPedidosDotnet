@@ -10,7 +10,7 @@ Domain
 ├── Products
 │   ├── Product.cs
 │   └── Category.cs
-│ 
+│
 Infra
 ├── Data
 │   └── DBContext.cs
@@ -99,3 +99,37 @@ protected override void ConfigureConventions(ModelConfigurationBuilder configura
     }
 ```
 
+## Padronizando Endpoints
+
+```csharp
+using ApiPedidosDotnet.Infra.Data;
+
+namespace ApiPedidosDotnet.Endpoints.Categories;
+
+public class CategoryPost
+{
+    public static string Template => "/categories";
+    public static string[] Methods => new string[] { HttpMethod.Post.ToString() };
+    public static Delegate Handle => Action;
+
+    public static IResult Action(CategoryRequest categoryRequest, ApplicationDBContext context)
+    {
+        return Results.Ok();
+    }
+}
+
+```
+
+```csharp
+namespace ApiPedidosDotnet.Endpoints.Categories;
+
+public class CategoryRequest
+{
+}
+```
+
+```csharp
+app.MapMethods(CategoryPost.Template, CategoryPost.Methods, CategoryPost.Handle);
+
+app.Run();
+```
