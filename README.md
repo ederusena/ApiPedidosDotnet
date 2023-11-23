@@ -89,5 +89,13 @@ public class ApplicationDBContext : DbContext
 }
 ```
 
+## Criando convernsões para o DBContext
 
+```csharp
+protected override void ConfigureConventions(ModelConfigurationBuilder configurationBuilder)
+    {
+        configurationBuilder.Properties<string>()
+            .HaveMaxLength(100);
+    }
+```
 

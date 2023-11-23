@@ -8,8 +8,8 @@ public abstract class BaseEntity
         //CreatedAt = DateTime.Now;
         //EditedAt = DateTime.Now;
     }
-
     public Guid Id { get; set; }
+    public string Name { get; set; }
     public string CreateBy { get; set; }
     public DateTime CreatedAt { get; set; }
     public string EditedBy { get; set; }
